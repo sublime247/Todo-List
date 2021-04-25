@@ -1,0 +1,21 @@
+body{
+    background-color: #184e77;
+}
+.container{
+    max-width: 400px;
+    width: 90%;
+}
+input[type='text'],
+input[type='text']:focus{
+   color: white;
+   background-color: #03045e;
+   border: none;
+   /* max-width: 400px; */
+   /* width: 90%; */
+}
+.listtodos li{
+background-color:white;
+}
+.filtered{
+    display: none !important;
+}
