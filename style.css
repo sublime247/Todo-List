@@ -22,9 +22,7 @@ background-color:white;
 .edit{
    cursor: pointer;
    position: absolute;
-   left: 15em;
-   right: 7em;
-   padding-right: 5px;
+   left: 18em;
 }
 .delete{
     cursor: pointer;
@@ -33,4 +31,12 @@ background-color:white;
 .delete:hover{
     color: red;
 
+}
+@media screen and (max-width: 700px) {
+    .edit{
+        cursor: pointer;
+        position: absolute;
+        left: 15em;
+        
+     }
 }
