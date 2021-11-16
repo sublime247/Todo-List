@@ -23,6 +23,7 @@ background-color:white;
    cursor: pointer;
    position: absolute;
    left: 15em;
+   right: 7em;
 }
 .delete{
     cursor: pointer;
