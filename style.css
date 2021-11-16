@@ -24,9 +24,11 @@ background-color:white;
    position: absolute;
    left: 15em;
    right: 7em;
+   padding-right: 5px;
 }
 .delete{
     cursor: pointer;
+  
 }
 .delete:hover{
     color: red;
