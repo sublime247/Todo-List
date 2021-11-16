@@ -10,8 +10,6 @@ input[type='text']:focus{
    color: white;
    background-color: #03045e;
    border: none;
-   /* max-width: 400px; */
-   /* width: 90%; */
 }
 .listtodos li{
 background-color:white;
@@ -25,18 +23,23 @@ background-color:white;
    left: 18em;
 }
 .delete{
-    cursor: pointer;
-  
+    cursor: pointer; 
 }
 .delete:hover{
     color: red;
-
+}
+.add{
+   position: relative;
+}
+.plus{
+    position: absolute;
+    top: 2.8em;
+    right: 1em;
 }
 @media screen and (max-width: 700px) {
     .edit{
         cursor: pointer;
         position: absolute;
-        left: 15em;
-        
+        left: 15em; 
      }
 }

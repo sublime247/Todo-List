@@ -2,6 +2,7 @@ const addTodo = document.querySelector('.add');
 const list=document.querySelector('ul')
 const searchTodo =document.querySelector('.search input')
 const editTodo =document.querySelector('.input')
+const plusTodo =document.querySelector('.plus')
 
 const todoTemplate=(newTodo)=>{
         let html =`<li class=" list-group-item d-flex justify-content-between align-items-center">
@@ -24,6 +25,13 @@ addTodo.addEventListener('submit', (e)=>{
         addTodo.reset()
     }
 });
+    plusTodo.addEventListener('click', ()=>{
+        const newTodo=addTodo.add.value.trim()
+        if(newTodo.length){
+            todoTemplate(newTodo)
+            addTodo.reset()
+        }
+    })
 
 //DELEGATION OF TODO
 list.addEventListener('click' , e=>{
