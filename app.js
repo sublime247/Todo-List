@@ -1,47 +1,69 @@
-const addtodo=document.querySelector('.add')
-const todolist =document.querySelector('.listtodos')
-const search = document.querySelector('.search input')
+const addTodo = document.querySelector('.add');
+const list=document.querySelector('ul')
+const searchTodo =document.querySelector('.search input')
+const editTodo =document.querySelector('.input')
 
-const Newtodo = (todo)=>{
-      const html =  ` <li class=" list-group-item d-flex justify-content-between align-items-center">
-            <span>${todo}</span>
-            <i class="far fa-trash-alt delete"></i>
-            </li>`;
-    todolist.innerHTML += html;
-};
-
-addtodo.addEventListener('submit', e=>{
-    e.preventDefault();
-    const todo = addtodo.add.value.trim();
-    if(todo.length){
-        Newtodo(todo);
-        addtodo.reset();
-    }
+const todoTemplate=(newTodo)=>{
+        let html =`<li class=" list-group-item d-flex justify-content-between align-items-center">
+        <span>${newTodo}</span>
     
-});
-//deleting todos
- todolist.addEventListener('click', e=>{
-    if(e.target.classList.contains('delete')){
-        e.target.parentElement.remove();
+        <i class="far fa-edit edit"></i>
+        <i class="far fa-trash-alt delete"></i>
+        
+    </li>`
+    list.innerHTML+=html
+}
+
+//ADDING OF TODO
+
+addTodo.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const newTodo=addTodo.add.value.trim()
+    if(newTodo.length){
+        todoTemplate(newTodo)
+        addTodo.reset()
     }
- });
- //search option
-const filteredTodo=(list)=>{
- Array.from(todolist.children)
- .filter((todo)=>{
-     return !todo.textContent.toLowerCase().includes(list);
- }).forEach((todo)=>{
-         todo.classList.add('filtered')
- });
- Array.from(todolist.children)
- .filter((todo)=>{
-     return todo.textContent.toLowerCase().includes(list);
- }).forEach((todo)=>{
-         todo.classList.remove('filtered')
- });
+});
+
+//DELEGATION OF TODO
+list.addEventListener('click' , e=>{
+  if(e.target.classList.contains('delete')){
+      e.target.parentElement.remove();
+  }
+})
+
+//EDITTING OF TODO
+
+list.addEventListener('click' ,e=>{
+    if(e.target.classList.contains('edit')){
+         editTodo.value=e.target.parentElement.textContent
+         e.target.parentElement.remove()
+
+    }
+      
+})
+
+//SEARCHING OF TODO
+const filterTodo=(search)=>{
+   Array.from(list.children)
+     .filter((todo)=>{
+         return !todo.textContent.toLowerCase().includes(search)
+     }).forEach((todo)=>{
+         return todo.classList.add('filtered')
+     }) 
+     Array.from(list.children)
+     .filter((todo)=>{
+         return todo.textContent.toLowerCase().includes(search)
+     }).forEach((todo)=>{
+         return todo.classList.remove('filtered')
+     })                
+     
 };
 
- search.addEventListener('keyup' , e=>{
-     const list = search.value.trim().toLowerCase();
-     filteredTodo(list)
- })
+
+searchTodo.addEventListener('keyup', ()=>{
+    const search=searchTodo.value.trim().toLowerCase()
+    filterTodo(search)
+})
+
+

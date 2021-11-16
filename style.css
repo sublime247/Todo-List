@@ -19,3 +19,15 @@ background-color:white;
 .filtered{
     display: none !important;
 }
+.edit{
+   cursor: pointer;
+   position: absolute;
+   left: 15em;
+}
+.delete{
+    cursor: pointer;
+}
+.delete:hover{
+    color: red;
+
+}

@@ -9,7 +9,7 @@
      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Todo List</title>
 </head>
 <body>
 
@@ -21,27 +21,12 @@
              </form>
          </header>
 
-         <ul class="list-group listtodos mx-auto text-primary">
-             <li class=" list-group-item d-flex justify-content-between align-items-center">
-                 <span>Read Novel</span>
-                 <i class="far fa-trash-alt delete"></i>
-             </li>
-             <li class=" list-group-item d-flex justify-content-between align-items-center">
-                <span>Go spa</span>
-                <i class="far fa-trash-alt delete"></i>
-            </li>
-            <li class=" list-group-item d-flex justify-content-between align-items-center">
-                <span>Gaming</span>
-                <i class="far fa-trash-alt delete"></i>
-            </li>
-            <li class=" list-group-item d-flex justify-content-between align-items-center">
-                <span>Visit Friend</span>
-                <i class="far fa-trash-alt delete"></i>
-            </li>
+         <ul class="list-group list-todos mx-auto text-primary">
+            <!-- //TODO LISTS -->
          </ul>
         <form action="" class="add text-center my-4 text-light">
             <label for="newtodo" class="text-light"> Add New Todo....</label>
-            <input type="text" class="form-control" name="add">
+            <input type="text" class="form-control input" name="add" autofocus placeholder="Enter your todo">
         </form>
       </div>
     <script src="app.js"></script>
